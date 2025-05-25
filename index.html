@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO Meta Tags -->
+  <title>RAZAN Team | تیم رازان - توسعه بازی و اپلیکیشن موبایل</title>
+  <meta name="description" content="تیم رازان (RAZAN Team) - توسعه‌دهنده بازی‌های موبایل، اپلیکیشن‌های اندروید و ابزارهای گیمینگ. DNS Booster، Game Shooter-X و پروژه‌های خلاقانه دیگر.">
+  <meta name="keywords" content="razan, raazan, تیم رازان, razan team, razan games, razan apps, اسحاق علی زاده, توسعه بازی, اپلیکیشن اندروید, DNS Booster, Game Shooter-X, گیمینگ, موبایل گیم">
+  <meta name="author" content="اسحاق علی زاده - RAZAN Team">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Persian">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="RAZAN Team | تیم رازان - توسعه بازی و اپلیکیشن">
+  <meta property="og:description" content="تیم رازان - خالق DNS Booster، Game Shooter-X و پروژه‌های نوآورانه در دنیای گیمینگ و تکنولوژی">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://razan-team.github.io">
+  <meta property="og:site_name" content="RAZAN Team">
+  <meta property="og:locale" content="fa_IR">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RAZAN Team - تیم رازان">
+  <meta name="twitter:description" content="توسعه‌دهنده بازی‌های موبایل و اپلیکیشن‌های خلاقانه">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://razanteam.github.io">
+  <title>RAZAN Team | تخصص در توسعه بازی موبایل و اپلیکیشن اندروید</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --gaming-gradient: linear-gradient(135deg, #00d4ff 0%, #ff0080 50%, #ffb347 100%);
+      --dark-bg: #0a0a0f;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --text-primary: #ffffff;
+      --text-secondary: #b8b8ff;
+      --neon-blue: #00d4ff;
+      --neon-pink: #ff0080;
+      --neon-orange: #ffb347;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(255, 179, 71, 0.1) 0%, transparent 50%);
+      animation: backgroundMove 20s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes backgroundMove {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(-20px, -20px) rotate(1deg); }
+      50% { transform: translate(20px, -10px) rotate(-1deg); }
+      75% { transform: translate(-10px, 20px) rotate(0.5deg); }
+    }
+
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--neon-blue);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    .particle:nth-child(2n) { background: var(--neon-pink); animation-delay: -2s; }
+    .particle:nth-child(3n) { background: var(--neon-orange); animation-delay: -4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      50% { transform: translateY(-100px) translateX(50px); }
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      background: var(--gaming-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: logoGlow 2s ease-in-out infinite alternate;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    @keyframes logoGlow {
+      from { filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5)); }
+      to { filter: drop-shadow(0 0 20px rgba(255, 0, 128, 0.8)); }
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    nav a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gaming-gradient);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--text-primary);
+      transform: translateY(-2px);
+    }
+
+    nav a:hover::before {
+      width: 100%;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+
+    .mobile-menu span {
+      width: 25px;
+      height: 3px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 2rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      animation: heroSlideUp 1s ease-out;
+    }
+
+    @keyframes heroSlideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+      background: var(--gaming-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      animation: textGlow 3s ease-in-out infinite alternate;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    @keyframes textGlow {
+      from { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3)); }
+      to { filter: drop-shadow(0 0 30px rgba(255, 0, 128, 0.6)); }
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      line-height: 1.6;
+      animation: heroSlideUp 1s ease-out 0.2s both;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--gaming-gradient);
+      color: var(--text-primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: heroSlideUp 1s ease-out 0.4s both;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: rotate(45deg);
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+    }
+
+    .cta-button:hover::before {
+      animation: shimmer 0.6s ease;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) rotate(45deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateX(100%) rotate(45deg); opacity: 0; }
+    }
+
+    /* Section Styles */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      background: var(--gaming-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--gaming-gradient);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 60px rgba(0, 212, 255, 0.2);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+
+    .project-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gaming-gradient);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  animation: iconFloat 4s ease-in-out infinite;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .project-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .team-member {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-member:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(255, 0, 128, 0.2);
+    }
+
+    .member-avatar {
+  width: 120px;
+  height: 120px;
+  background: var(--gaming-gradient);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Specific styling for Isaac's avatar */
+.team-member:first-child .member-avatar {
+  background-image: url('https://raw.githubusercontent.com/razanteam/landing/refs/heads/main/membersIMG/ISAAC.jpg');
+  background-size: cover;
+  background-position: center;
+  font-size: 0; /* Hide the letter 'A' */
+}
+
+/* Keep the animation effect for Isaac's avatar */
+.team-member:first-child .member-avatar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: avatarSpin 3s linear infinite;
+}
+
+    .member-avatar::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: avatarSpin 3s linear infinite;
+    }
+
+    @keyframes avatarSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .team-member h4 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .team-member p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    /* Social Media Section */
+    .social-section {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .social-title {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 2rem;
+      color: var(--text-primary);
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .social-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-content {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .social-link:hover {
+      color: var(--text-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+      background: rgba(0, 212, 255, 0.1);
+      border-color: rgba(0, 212, 255, 0.3);
+    }
+
+    .social-link i {
+      font-size: 1.2rem;
+    }
+
+    .footer-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 1rem;
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 1rem;
+      }
+
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 15, 0.98);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: flex;
+      }
+
+      .hero {
+        padding: 0 1rem;
+        min-height: 90vh;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .projects-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .social-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .social-link {
+        justify-content: center;
+      }
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="particles"></div>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">RAZAN</div>
+      <nav>
+        <ul>
+          <li><a href="#projects">پروژه‌ها</a></li>
+          <li><a href="#team">تیم ما</a></li>
+          <li><a href="#social">ارتباط با ما</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>تیم RAZAN</h1>
+      <p>پیشرو در توسعه بازی‌های موبایل و اپلیکیشن‌های اندروید</p>
+      <p>ترکیبی از خلاقیت، تکنولوژی و تجربه کاربری منحصر به فرد</p>
+      <a href="#projects" class="cta-button">مشاهده پروژه‌ها</a>
+    </div>
+  </section>
+
+  <section id="projects" class="fade-in">
+    <h2 class="section-title">پروژه‌های ما</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-icon">🚀</div>
+        <h3>RDNS</h3>
+        <p>اپلیکیشن پیشرفته بهینه‌ساز DNS مخصوص گیمرها با قابلیت کاهش پینگ و افزایش سرعت اتصال</p>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">🎮</div>
+        <h3>Game Shooter-X</h3>
+        <p>بازی آنلاین چندنفره با گرافیک مکعبی مدرن، فیزیک واقع‌گرایانه و سیستم رتبه‌بندی پیشرفته</p>
+      </div>
+      <div class="project-card">
+        <div class="project-icon">⚡</div>
+        <h3>پروژه‌های آینده</h3>
+        <p>پروژه‌های هیجان‌انگیز بیشتری در راه است... منتظر بمانید!</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="fade-in">
+    <h2 class="section-title">تیم ما</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="member-avatar">A</div>
+        <h4>اسحاق علی زاده</h4>
+        <p>توسعه‌دهنده اندروید، طراح بازی‌های موبایل و مؤسس تیم RAZAN. علاقه‌مند به خلق تجربیات تعاملی منحصربه‌فرد</p>
+      </div>
+      <div class="team-member">
+        <div class="member-avatar">D</div>
+        <h4>توسعه‌دهندگان</h4>
+        <p>تیم متخصص برنامه‌نویسی ما با تجربه در توسعه بازی‌های موبایل و اپلیکیشن‌های اندروید</p>
+      </div>
+      <div class="team-member">
+        <div class="member-avatar">D</div>
+        <h4>طراحان</h4>
+        <p>تیم طراحی و UX ما که تجربه کاربری منحصر به فردی خلق می‌کنند</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="social" class="social-section fade-in">
+    <h2 class="social-title">در شبکه‌های اجتماعی با ما همراه باشید</h2>
+    <p class="social-subtitle">برای دریافت آخرین اخبار و به روزرسانی‌های پروژه‌های ما، ما را در شبکه‌های اجتماعی دنبال کنید</p>
+    
+    <div class="social-links">
+      <a href="https://instagram.com/razanteam" class="social-link" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+        اینستاگرام
+      </a>
+      <a href="https://t.me/razanteam" class="social-link" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-telegram"></i>
+        تلگرام
+      </a>
+      <a href="https://discord.gg/razan" class="social-link" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-discord"></i>
+        دیسکورد
+      </a>
+      <a href="https://github.com/razanteam" class="social-link" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-github"></i>
+        گیت‌هاب
+      </a>
+      <a href="mailto:contact@razan.dev" class="social-link">
+        <i class="fas fa-envelope"></i>
+        ایمیل
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://instagram.com/razanteam" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://t.me/razanteam" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-telegram"></i>
+        </a>
+        <a href="https://discord.gg/razan" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://github.com/razanteam" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:contact@razan.dev">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+      <p class="footer-text">© 2025 RAZAN Team — تمامی حقوق محفوظ است</p>
+      <p class="footer-text">ساخته شده با ❤️ برای جامعه گیمینگ ایران</p>
+    </div>
+  </footer>
+
+  <script>
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.querySelector('.particles');
+      const particleCount = window.innerWidth < 768 ? 30 : 50;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Scroll animations
+    function handleScrollAnimations() {
+      const elements = document.querySelectorAll('.fade-in');
+      
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Smooth scrolling for navigation links
+    function setupSmoothScrolling() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = targetElement.offsetTop - headerHeight;
+            
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            const nav = document.querySelector('nav ul');
+            if (nav.style.display === 'flex') {
+              nav.style.display = 'none';
+            }
+          }
+        });
+      });
+    }
+
+    // Header scroll effect
+    function setupHeaderScroll() {
+      window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+          header.style.background = 'rgba(10, 10, 15, 0.98)';
+          header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+        } else {
+          header.style.background = 'rgba(10, 10, 15, 0.95)';
+          header.style.boxShadow = 'none';
+        }
+      });
+    }
+
+    // Mobile menu toggle
+    function setupMobileMenu() {
+      const menuToggle = document.querySelector('.mobile-menu');
+      const nav = document.querySelector('nav ul');
+      
+      menuToggle.addEventListener('click', function() {
+        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        
+        // Animate hamburger icon
+        this.classList.toggle('active');
+      });
+    }
+
+    // Initialize everything
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      setupSmoothScrolling();
+      setupHeaderScroll();
+      setupMobileMenu();
+      
+      // Initial scroll animation check
+      handleScrollAnimations();
+      
+      // Add scroll listener for animations
+      window.addEventListener('scroll', handleScrollAnimations);
+      
+      // Trigger initial animations
+      setTimeout(() => {
+        const heroContent = document.querySelector('.hero-content');
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+      }, 100);
+    });
+
+    // Resize handler for particles
+    window.addEventListener('resize', function() {
+      const particlesContainer = document.querySelector('.particles');
+      particlesContainer.innerHTML = '';
+      createParticles();
+    });
+  </script>
+</body>
+</html>
